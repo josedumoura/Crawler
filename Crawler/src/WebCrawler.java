@@ -69,7 +69,7 @@ public class WebCrawler {
 		FileWriter arquivo;
 
 		try {
-			arquivo = new FileWriter(new File("C:\\Ativos\\" + ativo + ".txt"));
+			arquivo = new FileWriter(new File("C:\\Ativos\\" + ativo.substring(0,4) + ".txt"));
 			arquivo.write(resultado);
 			arquivo.close();
 

@@ -89,7 +89,7 @@ public class WebCrawler {
 		List<String> ListaAtivos = new ArrayList<String>();
 		List<String> ListaAtivos1 = new ArrayList<String>();
 		List<String> ListaAtivos2 = new ArrayList<String>();
-
+		
 		long tempoInicio = System.currentTimeMillis();
 
 //		Ativos Bovespa ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

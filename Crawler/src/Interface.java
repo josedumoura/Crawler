@@ -1,17 +1,12 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
-import java.awt.Window.Type;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
@@ -86,7 +81,7 @@ public class Interface extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 //				abrir o log.out
 				try {
-					java.awt.Desktop.getDesktop().open(new File("C:\\Ativos\\log.out"));
+					java.awt.Desktop.getDesktop().open(new File("C:\\Ativos\\log.OUT"));
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

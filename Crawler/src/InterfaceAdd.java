@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,9 +10,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import java.awt.Color;
 
@@ -61,7 +57,7 @@ public class InterfaceAdd extends JFrame {
 					BufferedWriter add;
 					try {
 						add = new BufferedWriter(
-								new FileWriter("C:\\Ativos\\ListaAtivos\\ListaAtivosBovespa.txt", true));
+								new FileWriter("C:\\Ativos\\ListaAtivos\\ListaAtivosBovespa.TXT", true));
 						add.newLine();
 						add.write(nomeAtivo);
 						add.close();
@@ -84,7 +80,7 @@ public class InterfaceAdd extends JFrame {
 					BufferedWriter add;
 					try {
 						add = new BufferedWriter(
-								new FileWriter("C:\\Ativos\\ListaAtivos\\ListaAtivosNasdaq.txt", true));
+								new FileWriter("C:\\Ativos\\ListaAtivos\\ListaAtivosNasdaq.TXT", true));
 						add.newLine();
 						add.write(nomeAtivo);
 						add.close();
@@ -106,7 +102,7 @@ public class InterfaceAdd extends JFrame {
 				if (nomeAtivo != null) {
 					BufferedWriter add;
 					try {
-						add = new BufferedWriter(new FileWriter("C:\\Ativos\\ListaAtivos\\ListaAtivosNyse.txt", true));
+						add = new BufferedWriter(new FileWriter("C:\\Ativos\\ListaAtivos\\ListaAtivosNyse.TXT", true));
 						add.newLine();
 						add.write(nomeAtivo);
 						add.close();

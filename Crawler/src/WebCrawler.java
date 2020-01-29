@@ -36,7 +36,7 @@ public class WebCrawler {
 		FileWriter arquivo;
 
 		try {
-			arquivo = new FileWriter("C:\\Ativos\\log.out", true);
+			arquivo = new FileWriter("C:\\Ativos\\log.OUT", true);
 			PrintWriter escreveLog = new PrintWriter(arquivo);
 			escreveLog.println(log);
 			arquivo.close();
@@ -67,13 +67,14 @@ public class WebCrawler {
 		FileWriter arquivo;
 
 		try {
-//			tratamento para ativos com apenas 3 letras EX: IBM
-			if (ativo.length() < 3) {
-				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 2) + ".txt"));
+			if(ativo.length() < 2){
+				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 1) + ".TXT"));
+			}else if (ativo.length() < 3) {
+				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 2) + ".TXT"));
 			} else if (ativo.length() < 4) {
-				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 3) + ".txt"));
+				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 3) + ".TXT"));
 			} else {
-				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 4) + ".txt"));
+				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 4) + ".TXT"));
 			}
 			arquivo.write(resultado);
 			arquivo.close();
@@ -94,7 +95,7 @@ public class WebCrawler {
 
 //		Ativos Bovespa ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		try {
-			BufferedReader listaTxt = new BufferedReader(new FileReader("C:\\Ativos\\ListaAtivos\\ListaAtivosBovespa.txt"));
+			BufferedReader listaTxt = new BufferedReader(new FileReader("C:\\Ativos\\ListaAtivos\\ListaAtivosBovespa.TXT"));
 
 			while (listaTxt.ready()) {
 				ListaAtivos.add(listaTxt.readLine());
@@ -105,14 +106,16 @@ public class WebCrawler {
 		} catch (Exception err) {
 			System.err.println("Exception 2.0");
 		}
-
+//		Ativos BovespaBr e BovespaUS
 		for (int i = 0; i < ListaAtivos.size(); i++) {
-			visitaSite(ListaAtivos.get(i), "BMFBOVESPA-", "AtivosBovespa", "br");
+			visitaSite(ListaAtivos.get(i), "BMFBOVESPA-", "AtivosBovespaBR", "br");
+			visitaSite(ListaAtivos.get(i), "BMFBOVESPA-", "AtivosBovespaUS", "in");
+
 		}
 
 //		Ativos Nasdaq ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		try {
-			BufferedReader listaTxt1 = new BufferedReader(new FileReader("C:\\Ativos\\ListaAtivos\\ListaAtivosNasdaq.txt"));
+			BufferedReader listaTxt1 = new BufferedReader(new FileReader("C:\\Ativos\\ListaAtivos\\ListaAtivosNasdaq.TXT"));
 
 			while (listaTxt1.ready()) {
 				ListaAtivos1.add(listaTxt1.readLine());
@@ -131,7 +134,7 @@ public class WebCrawler {
 
 //		Ativos Nyse ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		try {
-			BufferedReader listaTxt2 = new BufferedReader(new FileReader("C:\\Ativos\\ListaAtivos\\ListaAtivosNyse.txt"));
+			BufferedReader listaTxt2 = new BufferedReader(new FileReader("C:\\Ativos\\ListaAtivos\\ListaAtivosNyse.TXT"));
 
 			while (listaTxt2.ready()) {
 				ListaAtivos2.add(listaTxt2.readLine());

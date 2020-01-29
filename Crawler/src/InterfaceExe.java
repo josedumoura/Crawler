@@ -45,7 +45,7 @@ public class InterfaceExe extends JFrame {
 			parse(ativo, pagina, tipoArq);
 
 		} catch (Exception err) {
-			System.err.println("Exception err 1.0, A URL n„o existe.");
+			System.err.println("Exception err 1.0, A URL n√£o existe.");
 		}
 	}
 
@@ -75,7 +75,7 @@ public class InterfaceExe extends JFrame {
 		if (pagina.contains("<div class=\"tv-widget-description__text\">")) {
 			createFile(resultado, ativo, tipoArq);
 		} else {
-			System.out.println("N„o existe, arquivo n„o criado.");
+			System.out.println("N√£o existe, arquivo n√£o criado.");
 		}
 		WriteLog("Ativo finalizado: " + ativo);
 	}
@@ -85,7 +85,9 @@ public class InterfaceExe extends JFrame {
 
 		try {
 //			tratamento para ativos com apenas 3 letras EX: IBM
-			if (ativo.length() < 3) {
+			if(ativo.length() < 2){
+				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 1) + ".TXT"));
+			}else if (ativo.length() < 3) {
 				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 2) + ".TXT"));
 			} else if (ativo.length() < 4) {
 				arquivo = new FileWriter(new File("C:\\Ativos\\" + tipoArq + "\\" + ativo.substring(0, 3) + ".TXT"));
